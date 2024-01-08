@@ -44,7 +44,8 @@ class Jarvis implements JarvisInterface {
           content: 'Hello there! How are you? How may I assist you, Sir?',
           replyId: event.message.id,
         ));
-      } else if (event.mentions.contains(user)) {
+      }
+      if (event.mentions.contains(user)) {
         await event.message.channel.sendMessage(MessageBuilder(
           content: 'I love you!',
           replyId: event.message.id,
