@@ -1,3 +1,3 @@
 mixin StateMixin {
-  String lastPrompt = '';
+  bool isLastAuthorBot = false;
 }

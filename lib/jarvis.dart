@@ -41,20 +41,12 @@ class Jarvis with StateMixin implements JarvisInterface {
     });
 
     client.onMessageCreate.listen((event) async {
-      // if (event.message.author.username.contains('yelwinoo')) {
-      //   await event.message
-      //       .react(ReactionBuilder(name: '👍', id: event.message.id));
-      // }
-      print("before prompt ----> $lastPrompt");
-      print("prompt =====> ${event.message.content}");
-      print("is prompt equal ---> ${event.message.content == lastPrompt}");
-      if (event.message.content != lastPrompt) {
-        lastPrompt = event.message.content;
-        print('after prompt -------> $lastPrompt');
+      checkAuthor(event.message.author.username.toLowerCase());
+      if (!isLastAuthorBot) {
         getAIChatResponse(
           event.message.content,
           onSuccess: (data) async {
-            print('data >> ${data.status}');
+            isLastAuthorBot = true;
             await event.message.channel.sendMessage(MessageBuilder(
               content: data.output,
               replyId: event.message.id,
@@ -69,6 +61,13 @@ class Jarvis with StateMixin implements JarvisInterface {
         );
       }
     });
+  }
+
+  @override
+  void checkAuthor(String author) {
+    if (author != 'jarvis') {
+      isLastAuthorBot = false;
+    }
   }
 
   @override
