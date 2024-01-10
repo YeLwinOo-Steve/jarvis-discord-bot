@@ -8,7 +8,7 @@ class Jarvis implements JarvisInterface {
   late NyxxGateway client;
   @override
   void dispose() {
-    // client.close();
+    client.close();
   }
 
   @override
@@ -27,7 +27,6 @@ class Jarvis implements JarvisInterface {
     final user = await client.users.fetchCurrentUser();
 
     client.onReady.listen((event) {
-      print("event -----> ${event.sessionId}");
       client.updatePresence(
         PresenceBuilder(
           status: CurrentUserStatus.online,
@@ -38,7 +37,6 @@ class Jarvis implements JarvisInterface {
 
     print("user is ${user.username}");
     client.onMessageCreate.listen((event) async {
-      print("----> mesage content ${event.message.author.username}");
       if (event.message.author.username == 'yelwinoo') {
         await event.message.channel.sendMessage(MessageBuilder(
           content: 'Hello there! How are you? How may I assist you, Sir?',
@@ -47,7 +45,7 @@ class Jarvis implements JarvisInterface {
       }
       if (event.mentions.contains(user)) {
         await event.message.channel.sendMessage(MessageBuilder(
-          content: 'I love you!',
+          content: 'I love you Yoh!',
           replyId: event.message.id,
         ));
       }

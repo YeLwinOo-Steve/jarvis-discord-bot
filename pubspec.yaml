@@ -8,6 +8,8 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
+  http: ^1.1.0
+  logger: ^2.0.2+1
   nyxx: ^6.1.0
   # path: ^1.8.0
 

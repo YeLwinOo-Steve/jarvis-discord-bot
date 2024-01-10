@@ -1,9 +1,12 @@
 import 'package:discord_bot/jarvis.dart';
 
-void main(){
+void main() {
   final bot = Jarvis();
-  bot.onInit().then((_){
+  bot.onInit().then((_) {
     bot.run();
-    bot.dispose();
-  });
+  }).onError(
+    (error, stackTrace) {
+      bot.dispose();
+    },
+  );
 }
