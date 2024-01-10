@@ -1,0 +1,3 @@
+mixin StateMixin {
+  String lastPrompt = '';
+}
