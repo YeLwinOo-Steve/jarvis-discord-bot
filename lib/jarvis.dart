@@ -1,35 +1,38 @@
 import 'package:discord_bot/interface/jarvis_interface.dart';
 import 'package:discord_bot/services/chat_service.dart';
-import 'package:nyxx/nyxx.dart' hide logging;
+import 'package:nyxx/nyxx.dart';
 
 import 'configs/bot_key.dart';
+import 'mixins/log_mixin.dart';
 import 'mixins/state_mixin.dart';
 import 'models/chat.dart';
 
-class Jarvis with StateMixin implements JarvisInterface {
+class Jarvis with StateMixin, LogMixin implements JarvisInterface {
   Jarvis(this.service);
   ChatService service;
   late NyxxGateway client;
   @override
   void dispose() {
     client.close();
+    infoLog('[NyxxClient] connection closed!');
   }
 
   @override
   Future<void> onInit() async {
     try {
+      infoLog('[NyxxClient] connecting JARVIS!');
       client = await Nyxx.connectGateway(TOKEN, GatewayIntents.allUnprivileged,
           options: GatewayClientOptions(plugins: [Logging(), cliIntegration]));
+      infoLog('[NyxxClient] connected successfully to JARVIS!');
     } catch (ex, stacktrace) {
-      Logging().logger.severe('Exception occurred $ex');
-      Logging().logger.severe(stacktrace.toString());
+      errorLog('Exception occurred $ex');
+      errorLog(stacktrace.toString());
     }
   }
 
   @override
   Future<void> run() async {
     final user = await client.users.fetchCurrentUser();
-
     client.onReady.listen((event) {
       client.updatePresence(
         PresenceBuilder(
@@ -37,21 +40,25 @@ class Jarvis with StateMixin implements JarvisInterface {
           isAfk: true,
         ),
       );
+      infoLog('[NyxxClient] JARVIS comes online!');
     });
 
     client.onMessageCreate.listen((event) async {
       checkAuthor(event.message.author.username.toLowerCase());
       if (!isLastAuthorBot && isBotMentioned(event.mentions)) {
+        infoLog('[NyxxClient] waiting for JARVIS response ...');
         getAIChatResponse(
           event.message.content,
           onSuccess: (data) async {
             isLastAuthorBot = true;
+            infoLog('[NyxxClient] JARVIS response received!');
             await event.message.channel.sendMessage(MessageBuilder(
               content: data.output,
               replyId: event.message.id,
             ));
           },
           onError: (message) async {
+            errorLog('[NyxxClient] JARVIS error -> $message');
             await event.message.channel.sendMessage(MessageBuilder(
               content: 'ERROR ------------> $message',
               replyId: event.message.id,

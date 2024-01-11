@@ -18,6 +18,7 @@
     <inspection_tool class="AccessorsWereOverridden" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="ActionIsNotPreviewFriendly" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="ActionPresentationInitializedInCtor" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="ActionPresentationInstantiatedInCtor" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="AddConversionCallMigration" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="AddOperatorModifier" enabled="true" level="INFORMATION" enabled_by_default="true" />
     <inspection_tool class="AddVarianceModifier" enabled="true" level="INFORMATION" enabled_by_default="true" />
@@ -339,6 +340,7 @@
     <inspection_tool class="AndroidLintScrollViewCount" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="AndroidLintScrollViewSize" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="AndroidLintSdCardPath" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="AndroidLintSecretInSource" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="AndroidLintSecureRandom" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="AndroidLintSelectableText" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="AndroidLintSelectedPhotoAccess" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -491,6 +493,7 @@
     <inspection_tool class="ApiNamespace" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="ApiParameter" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="ApplicationServiceAsStaticFinalField" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="ApplicationServiceAsStaticFinalFieldOrProperty" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="ArgumentSelectionDefects" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="ArrayCanBeReplacedWithEnumValues" enabled="true" level="INFORMATION" enabled_by_default="true" />
     <inspection_tool class="ArrayCreationWithoutNewKeyword" enabled="true" level="INFORMATION" enabled_by_default="true" />
@@ -902,6 +905,7 @@
     <inspection_tool class="FieldNotUsedInToString" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="FileEqualsUsage" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="FillPermitsList" enabled="true" level="INFORMATION" enabled_by_default="true" />
+    <inspection_tool class="FilterIsInstanceCallWithClassLiteralArgument" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="FinalClass" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="FinalMethod" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="FinalMethodInFinalClass" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -1082,9 +1086,30 @@
     <inspection_tool class="HtmlRequiredTitleElement" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="HtmlTagCanBeJavadocTag" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="HtmlUnknownAnchorTarget" enabled="true" level="WARNING" enabled_by_default="true" />
-    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="0" />
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
     <inspection_tool class="HtmlUnknownBooleanAttribute" enabled="true" level="WARNING" enabled_by_default="true" />
-    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myValues">
+        <value>
+          <list size="6">
+            <item index="0" class="java.lang.String" itemvalue="nobr" />
+            <item index="1" class="java.lang.String" itemvalue="noembed" />
+            <item index="2" class="java.lang.String" itemvalue="comment" />
+            <item index="3" class="java.lang.String" itemvalue="noscript" />
+            <item index="4" class="java.lang.String" itemvalue="embed" />
+            <item index="5" class="java.lang.String" itemvalue="script" />
+          </list>
+        </value>
+      </option>
+      <option name="myCustomValuesEnabled" value="true" />
+    </inspection_tool>
     <inspection_tool class="HtmlUnknownTarget" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="HtmlWrongAttributeValue" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="IOResource" enabled="false" level="WARNING" enabled_by_default="false" />
@@ -1130,11 +1155,12 @@
     <inspection_tool class="IncorrectParentDisposable" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="IncorrectPluginDslStructure" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="IncorrectProcessCanceledExceptionHandling" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="IncorrectServiceRetrieving" enabled="false" level="ERROR" enabled_by_default="false" />
     <inspection_tool class="IncrementDecrementUsedAsExpression" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="IndexOfReplaceableByContains" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="InfiniteLoopStatement" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="InfinitePropertiesLabel" enabled="true" level="WARNING" enabled_by_default="true" />
-    <inspection_tool class="InfiniteRecursion" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="InfiniteRecursion" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="InfiniteTransitionLabel" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="InitializationIssue" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="InitializerIssues" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -1281,6 +1307,7 @@
     <inspection_tool class="LimitedScopeInnerClass" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="ListIndexOfReplaceableByContains" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="ListRemoveInLoop" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ListenerImplementationMustNotBeDisposable" enabled="false" level="ERROR" enabled_by_default="false" />
     <inspection_tool class="ListenerMayUseAdapter" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="LiteralAsArgToStringEquals" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="LoadLibraryWithNonConstantString" enabled="false" level="WARNING" enabled_by_default="false" />
@@ -1332,6 +1359,7 @@
     <inspection_tool class="MeaninglessRecordAnnotationInspection" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="MemberVisibility" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="MemberVisibilityCanBePrivate" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="MemoryLeak" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="MetaAnnotationWithoutRuntimeRetention" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="MethodCallInLoopCondition" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="MethodCanBeVariableArityMethod" enabled="true" level="INFORMATION" enabled_by_default="true" />
@@ -1465,6 +1493,7 @@
     <inspection_tool class="NotImplementedMethods" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="NotImplementsProtocol" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="NotInHierarchyMessage" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="NotInitializedField" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="NotInitializedVariable" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="NotNullFieldNotInitialized" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="NotReleasedValue" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -1482,6 +1511,7 @@
     <inspection_tool class="NumericOverflow" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="NumericToString" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="OCDFA" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="OCGlobalDFAInspection" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="OCInconsistentNaming" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="OCLegacyObjCLiteral" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="OCNotLocalizedString" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -1653,6 +1683,7 @@
     <inspection_tool class="RedundantConstructorKeyword" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
     <inspection_tool class="RedundantElseInIf" enabled="true" level="INFORMATION" enabled_by_default="true" />
     <inspection_tool class="RedundantElvisReturnNull" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="RedundantEmbeddedExpression" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="RedundantEmptyInitializerBlock" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
     <inspection_tool class="RedundantEnumConstructorInvocation" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
     <inspection_tool class="RedundantEscapeInRegexReplacement" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -1774,7 +1805,9 @@
     <inspection_tool class="ReplaceWithJavadoc" enabled="true" level="INFORMATION" enabled_by_default="true" />
     <inspection_tool class="ReplaceWithOperatorAssignment" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
     <inspection_tool class="ReplaceWithStringBuilderAppendRange" enabled="true" level="WARNING" enabled_by_default="true" />
-    <inspection_tool class="RequiredAttributes" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="RequiredAttributes" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myAdditionalRequiredHtmlAttributes" value="" />
+    </inspection_tool>
     <inspection_tool class="ResourceNotFound" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="ResourceParameter" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="RestSignature" enabled="true" level="ERROR" enabled_by_default="true" />
@@ -1803,6 +1836,7 @@
     <inspection_tool class="SecondUnsafeCall" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="SelfAssignment" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="SelfReferenceConstructorParameter" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SequencedCollectionMethodCanBeUsed" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="SerialAnnotationUsedOnWrongMember" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="SerialPersistentFieldsWithWrongSignature" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="SerialVersionUIDNotStaticFinal" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -1839,6 +1873,7 @@
     <inspection_tool class="SimplifiableConditionalExpression" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="SimplifiableEqualsExpression" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="SimplifiableIfStatement" enabled="true" level="INFORMATION" enabled_by_default="true" />
+    <inspection_tool class="SimplifiableServiceRetrieving" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
     <inspection_tool class="Simplify" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="SimplifyAssertNotNull" enabled="true" level="INFORMATION" enabled_by_default="true" />
     <inspection_tool class="SimplifyBooleanWithConstants" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
@@ -1877,6 +1912,7 @@
     <inspection_tool class="StaticGuardedByInstance" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="StaticImport" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="StaticInheritance" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="StaticInitializationInExtensions" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="StaticInitializerReferencesSubClass" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="StaticMethodOnlyUsedInOneClass" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="StaticNonFinalField" enabled="false" level="WARNING" enabled_by_default="false" />
@@ -1904,6 +1940,7 @@
     <inspection_tool class="StringOperationCanBeSimplified" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="StringRepeatCanBeUsed" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="StringReplaceableByStringBuffer" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="StringTemplateMigration" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="StringToUpperWithoutLocale" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="StringTokenizer" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="StringTokenizerDelimiter" enabled="true" level="WARNING" enabled_by_default="true" />
@@ -1951,6 +1988,7 @@
     <inspection_tool class="SynchronizedOnLiteralObject" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="SystemExit" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="SystemGC" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SystemGetProperty" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="SystemGetenv" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="SystemOutErr" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="SystemProperties" enabled="false" level="WARNING" enabled_by_default="false" />
@@ -2028,6 +2066,7 @@
     <inspection_tool class="UndeclaredTests" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="UndesirableClassUsage" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="UnknownGuard" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="UnknownIdInMetaInformation" enabled="false" level="ERROR" enabled_by_default="false" />
     <inspection_tool class="UnknownLanguage" enabled="true" level="ERROR" enabled_by_default="true" />
     <inspection_tool class="UnlabeledReturnInsideLambda" enabled="true" level="INFORMATION" enabled_by_default="true" />
     <inspection_tool class="UnnecessarilyQualifiedInnerClassAccess" enabled="true" level="INFORMATION" enabled_by_default="true" />
@@ -2134,6 +2173,7 @@
     <inspection_tool class="UseOfProcessBuilder" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="UseOfPropertiesAsHashtable" enabled="false" level="WARNING" enabled_by_default="false" />
     <inspection_tool class="UseOfSunClasses" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="UsePlatformProcessAwaitExit" enabled="false" level="ERROR" enabled_by_default="false" />
     <inspection_tool class="UsePluginIdEquals" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="UsePrimitiveTypes" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="UsePropertyAccessSyntax" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
