@@ -1,4 +1,4 @@
-![JARVIS](assets/JARVIS.png)
+![JARVIS](assets/jarvis.png)
 
 
 
