@@ -1,3 +1,7 @@
+![JARVIS](assets/JARVIS.png)
+
+
+
 ### JARVIS AI Discord Bot 💬🤖
 
 
