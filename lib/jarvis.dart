@@ -14,16 +14,16 @@ class Jarvis with StateMixin, LogMixin implements JarvisInterface {
   @override
   void dispose() {
     client.close();
-    infoLog('[NyxxClient] connection closed!');
+    infoLog('connection closed!');
   }
 
   @override
   Future<void> onInit() async {
     try {
-      infoLog('[NyxxClient] connecting JARVIS!');
+      infoLog('connecting...');
       client = await Nyxx.connectGateway(TOKEN, GatewayIntents.allUnprivileged,
           options: GatewayClientOptions(plugins: [Logging(), cliIntegration]));
-      infoLog('[NyxxClient] connected successfully to JARVIS!');
+      infoLog('connected successfully!');
     } catch (ex, stacktrace) {
       errorLog('Exception occurred $ex');
       errorLog(stacktrace.toString());
@@ -40,25 +40,25 @@ class Jarvis with StateMixin, LogMixin implements JarvisInterface {
           isAfk: true,
         ),
       );
-      infoLog('[NyxxClient] JARVIS comes online!');
+      infoLog('JARVIS comes online!');
     });
 
     client.onMessageCreate.listen((event) async {
       checkAuthor(event.message.author.username.toLowerCase());
       if (!isLastAuthorBot && isBotMentioned(event.mentions)) {
-        infoLog('[NyxxClient] waiting for JARVIS response ...');
+        infoLog('waiting for JARVIS response ...');
         getAIChatResponse(
           event.message.content,
           onSuccess: (data) async {
             isLastAuthorBot = true;
-            infoLog('[NyxxClient] JARVIS response received!');
+            infoLog('JARVIS response received!');
             await event.message.channel.sendMessage(MessageBuilder(
               content: data.output,
               replyId: event.message.id,
             ));
           },
           onError: (message) async {
-            errorLog('[NyxxClient] JARVIS error -> $message');
+            errorLog('JARVIS error -> $message');
             await event.message.channel.sendMessage(MessageBuilder(
               content: 'ERROR ------------> $message',
               replyId: event.message.id,

@@ -3,7 +3,7 @@ import 'package:logger/logger.dart';
 mixin LogMixin {
   final logger = Logger();
 
-  get infoLog => logger.i;
-  get debugLog => logger.d;
-  get errorLog => logger.e;
+  void infoLog(String message) => logger.i('[JARVIS] $message');
+  void debugLog(String message) => logger.d('[JARVIS] $message');
+  void errorLog(String message) => logger.e('[JARVIS] $message');
 }
