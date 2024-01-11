@@ -2,7 +2,6 @@
 //
 //     final chat = chatFromJson(jsonString);
 
-import 'dart:convert';
 
 class Chat {
   String? status;

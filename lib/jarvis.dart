@@ -1,7 +1,6 @@
 import 'package:discord_bot/interface/jarvis_interface.dart';
 import 'package:discord_bot/services/chat_service.dart';
 import 'package:nyxx/nyxx.dart' hide logging;
-import 'package:nyxx/src/plugin/logging.dart' show Logging;
 
 import 'configs/bot_key.dart';
 import 'mixins/state_mixin.dart';

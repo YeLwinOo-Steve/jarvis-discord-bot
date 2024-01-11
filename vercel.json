@@ -1,0 +1,6 @@
+{
+  "builds": [
+    { "src": "pubspec.yaml", "use": "@vercel/static-build" },
+    { "src": "**/*.dart", "use": "dart@2.x" }
+  ]
+}
