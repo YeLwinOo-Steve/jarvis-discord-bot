@@ -42,7 +42,7 @@ class Jarvis with StateMixin implements JarvisInterface {
 
     client.onMessageCreate.listen((event) async {
       checkAuthor(event.message.author.username.toLowerCase());
-      if (!isLastAuthorBot) {
+      if (!isLastAuthorBot && isBotMentioned(event.mentions)) {
         getAIChatResponse(
           event.message.content,
           onSuccess: (data) async {
@@ -61,6 +61,14 @@ class Jarvis with StateMixin implements JarvisInterface {
         );
       }
     });
+  }
+
+  @override
+  bool isBotMentioned(List<User> users) {
+    for (User user in users) {
+      if (user.isBot) return true;
+    }
+    return false;
   }
 
   @override
