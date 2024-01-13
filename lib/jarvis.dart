@@ -10,10 +10,10 @@ import 'models/chat.dart';
 class Jarvis with StateMixin, LogMixin implements JarvisInterface {
   Jarvis(this.service);
   ChatService service;
-  late NyxxGateway client;
+  NyxxGateway? client;
   @override
   void dispose() {
-    client.close();
+    client!.close();
     infoLog('connection closed!');
   }
 
@@ -32,9 +32,9 @@ class Jarvis with StateMixin, LogMixin implements JarvisInterface {
 
   @override
   Future<void> run() async {
-    final user = await client.users.fetchCurrentUser();
-    client.onReady.listen((event) {
-      client.updatePresence(
+    final user = await client!.users.fetchCurrentUser();
+    client!.onReady.listen((event) {
+      client!.updatePresence(
         PresenceBuilder(
           status: CurrentUserStatus.online,
           isAfk: true,
@@ -43,7 +43,7 @@ class Jarvis with StateMixin, LogMixin implements JarvisInterface {
       infoLog('JARVIS comes online!');
     });
 
-    client.onMessageCreate.listen((event) async {
+    client!.onMessageCreate.listen((event) async {
       checkAuthor(event.message.author.username.toLowerCase());
       if (!isLastAuthorBot && isBotMentioned(event.mentions)) {
         infoLog('waiting for JARVIS response ...');
